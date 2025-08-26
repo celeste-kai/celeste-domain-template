@@ -32,7 +32,7 @@ class GoogleDomainTemplateClient(BaseClient):
         - generate_embeddings(texts) -> AIResponse
         """
         # TODO: Implement provider API call and return domain artifact
-        # response = await self.client.api_call(model=self.model_name, ...)
+        # response = await self.client.api_call(model=self.model, ...)
         # return YourArtifact(data=response.data)
         raise NotImplementedError
 
