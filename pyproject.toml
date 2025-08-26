@@ -1,0 +1,42 @@
+[project]
+name = "celeste-{DOMAIN_NAME_HYPHENATED}"
+version = "0.1.0"
+description = "{DISPLAY_NAME} capabilities for Celeste"
+requires-python = ">=3.13"
+dependencies = [
+    "celeste-core>=0.1.0",
+    "pydantic>=2.11.7",
+    # Add provider-specific dependencies here
+    # Example: "google-genai>=0.1.0",  # For Google providers
+    # Example: "openai>=1.91.0",       # For OpenAI providers
+]
+
+[dependency-groups]
+dev = [
+    "pre-commit>=4.2.0",
+    "ruff>=0.12.1",
+    "streamlit>=1.46.0",
+    # Add testing dependencies if needed
+    # "pytest>=7.0.0",
+]
+
+[tool.uv.sources]
+celeste-core = { git = "https://github.com/celeste-kai/celeste-core.git" }
+
+[tool.ruff]
+line-length = 88
+target-version = "py313"
+
+[tool.ruff.lint]
+select = ["E", "W", "F", "I", "ANN", "B", "C4", "T20"]
+ignore = ["ANN401", "ANN101", "ANN102"]
+fixable = ["ALL"]
+
+[tool.ruff.format]
+quote-style = "double"
+
+# TODO: Replace all {PLACEHOLDER} values:
+# - {DOMAIN_NAME_HYPHENATED}: hyphenated domain name (e.g., "text-to-speech")
+# - {DISPLAY_NAME}: human-readable name (e.g., "Text-to-Speech")
+# - Add actual provider dependencies in the dependencies array
+# - Remove this TODO section when complete
